@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fireor</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Particles.js Demo</title>
+    <!-- Include the particles.js library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Include your custom CSS file -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Container for the particles.js animation -->
     <div id="particles-js"></div>
-    <script src="particles.js"></script>
+
+    <!-- Custom JavaScript to initialize particles.js -->
     <script>
         particlesJS.load('particles-js', 'particles.json', function() {
             console.log('particles.js config loaded');
