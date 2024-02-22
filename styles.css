@@ -42,43 +42,27 @@ header {
     border-radius: 50%;
     pointer-events: none;
     z-index: 999;
-    animation: moveCursor 5s infinite alternate;
+    transform: translate(-50%, -50%);
 }
 
-.rounded {
-    animation-name: moveCursorRounded;
+.ball {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999;
+    animation: moveBalls 10s linear infinite alternate;
 }
 
-.pointed {
-    animation-name: moveCursorPointed;
-}
-
-@keyframes moveCursor {
+@keyframes moveBalls {
     from {
-        top: 0;
-        left: 0;
+        top: -10px;
+        left: -10px;
     }
     to {
-        top: calc(100vh - 15px);
-        left: calc(100vw - 15px);
+        top: calc(100vh + 10px);
+        left: calc(100vw + 10px);
     }
 }
-
-@keyframes moveCursorRounded {
-    from {
-        border-radius: 0;
-    }
-    to {
-        border-radius: 50%;
-    }
-}
-
-@keyframes moveCursorPointed {
-    from {
-        border-radius: 50%;
-    }
-    to {
-        border-radius: 0;
-    }
-}
-
