@@ -46,39 +46,17 @@ header {
     animation: moveCursor 5s infinite alternate;
 }
 
-.rounded {
-    animation-name: moveCursorRounded;
-}
-
-.pointed {
-    animation-name: moveCursorPointed;
-}
-
 @keyframes moveCursor {
-    from {
+    0% {
         top: 0;
         left: 0;
     }
-    to {
+    50% {
         top: calc(100vh - 15px);
         left: calc(100vw - 15px);
     }
-}
-
-@keyframes moveCursorRounded {
-    from {
-        border-radius: 0;
-    }
-    to {
-        border-radius: 50%;
-    }
-}
-
-@keyframes moveCursorPointed {
-    from {
-        border-radius: 50%;
-    }
-    to {
-        border-radius: 0;
+    100% {
+        top: 0;
+        left: 0;
     }
 }
