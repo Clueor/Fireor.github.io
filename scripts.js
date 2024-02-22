@@ -1,10 +1,15 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const h1 = document.querySelector('h1');
+// Select elements to animate
+const elements = document.querySelectorAll('.animate-me');
 
-    document.addEventListener('mousemove', function(e) {
-        const x = e.clientX / window.innerWidth;
-        const y = e.clientY / window.innerHeight;
-
-        h1.style.transform = `translate(${x *  100 -  50}px, ${y *  100 -  50}px)`;
+// Add event listeners (e.g., for mousemove)
+elements.forEach(element => {
+    element.addEventListener('mousemove', (event) => {
+        // Add your animation code here, using library functions or CSS transforms
+        // Example with GSAP:
+        GSAP.to(element, {
+            duration: 0.5,
+            scale: 1.2,
+            ease: 'bounce.out'
+        });
     });
 });
