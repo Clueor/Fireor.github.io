@@ -3,81 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Super Cool Website</title>
+    <title>Fireor</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #000;
+            color: #fff;
         }
         header {
-            background-color: #333;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        .discord-button {
+            background-color: #ff0000;
             color: #fff;
-            padding: 20px;
-            text-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .discord-button:hover {
+            transform: scale(1.1);
         }
         .container {
             max-width: 800px;
-            margin: 20px auto;
+            margin: 100px auto;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        h1 {
             text-align: center;
-            color: #333;
+            animation: fadeIn 1s ease;
         }
-        p {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: #ff4d4d;
-            color: #fff;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .cta-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(255, 77, 77, 0.5);
-        }
-        .cta-button:active {
-            transform: scale(0.9);
-        }
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
             }
-            50% {
-                transform: scale(1.1);
+            to {
+                opacity: 1;
             }
-            100% {
-                transform: scale(1);
-            }
-        }
-        .animated-button {
-            animation: pulse 2s infinite;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Super Cool Website</h1>
+        <a href="https://discord.gg/fkeXQwYGYS" class="discord-button">Discord</a>
     </header>
     <div class="container">
-        <h2>About Us</h2>
-        <p>This is the coolest HTML webpage you've ever seen, hosted on GitHub. It's packed with animations, vibrant colors, and modern design elements.</p>
-        <h2>Our Services</h2>
-        <p>We offer a range of services including web development, design, and consulting. Our team is dedicated to delivering top-notch solutions.</p>
-        <h2>Contact Us</h2>
-        <p>Ready to get started? Contact us now!</p>
-        <p><a href="mailto:contact@example.com" class="cta-button animated-button">Contact Now</a></p>
+        <h1>Welcome to Fireor</h1>
+        <p>This is a simple and cool website with a black background and a red Discord button.</p>
+        <p>Add your cool content here!</p>
     </div>
 </body>
 </html>
