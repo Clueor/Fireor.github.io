@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const container = document.body;
+    const container = document.getElementById('container');
 
     setInterval(createBall, 1000); // Create a new ball every second
 
@@ -10,23 +10,12 @@ document.addEventListener('DOMContentLoaded', function () {
         ball.style.left = Math.random() * window.innerWidth + 'px';
         container.appendChild(ball);
 
-        ball.addEventListener('mousemove', function (event) {
-            const mouseX = event.clientX;
-            const mouseY = event.clientY;
+        ball.addEventListener('mouseover', function (event) {
+            ball.style.backgroundColor = '#ff0000';
+        });
 
-            const ballRect = ball.getBoundingClientRect();
-            const ballX = ballRect.left + ballRect.width / 2;
-            const ballY = ballRect.top + ballRect.height / 2;
-
-            const dx = mouseX - ballX;
-            const dy = mouseY - ballY;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance < 100) {
-                ball.style.backgroundColor = '#ff0000';
-            } else {
-                ball.style.backgroundColor = '#fff';
-            }
+        ball.addEventListener('mouseout', function (event) {
+            ball.style.backgroundColor = '#fff';
         });
     }
 });
