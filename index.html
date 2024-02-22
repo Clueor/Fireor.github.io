@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Cool Website</title>
+    <title>My Super Cool Website</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
@@ -23,6 +23,7 @@
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
         h1 {
             text-align: center;
@@ -31,33 +32,52 @@
         p {
             color: #666;
             line-height: 1.6;
+            margin-bottom: 20px;
         }
         .cta-button {
             display: inline-block;
-            background-color: #007bff;
+            background-color: #ff4d4d;
             color: #fff;
-            padding: 10px 20px;
+            padding: 15px 30px;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            border-radius: 50px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .cta-button:hover {
-            background-color: #0056b3;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 77, 77, 0.5);
+        }
+        .cta-button:active {
+            transform: scale(0.9);
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .animated-button {
+            animation: pulse 2s infinite;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Cool Website</h1>
+        <h1>Welcome to My Super Cool Website</h1>
     </header>
     <div class="container">
         <h2>About Us</h2>
-        <p>This is a cooler HTML webpage hosted on GitHub. It features a modern design with a stylish header and clean layout.</p>
+        <p>This is the coolest HTML webpage you've ever seen, hosted on GitHub. It's packed with animations, vibrant colors, and modern design elements.</p>
         <h2>Our Services</h2>
-        <p>We offer a range of services including web development, design, and consulting.</p>
+        <p>We offer a range of services including web development, design, and consulting. Our team is dedicated to delivering top-notch solutions.</p>
         <h2>Contact Us</h2>
-        <p>Get in touch with us to discuss your project or for any inquiries.</p>
-        <p><a href="mailto:contact@example.com" class="cta-button">Contact Now</a></p>
+        <p>Ready to get started? Contact us now!</p>
+        <p><a href="mailto:contact@example.com" class="cta-button animated-button">Contact Now</a></p>
     </div>
 </body>
 </html>
