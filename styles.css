@@ -1,1 +1,23 @@
+body {
+    margin:  0;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:  100vh;
+}
+
+.container {
+    text-align: center;
+    color: #fff;
+}
+
+.box {
+    width:  100px;
+    height:  100px;
+    background-color: #ff0000;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
 
