@@ -6,8 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
     function createBall() {
         const ball = document.createElement('div');
         ball.classList.add('ball');
-        ball.style.top = Math.random() * window.innerHeight + 'px';
-        ball.style.left = Math.random() * window.innerWidth + 'px';
+        const randomX = Math.random() * window.innerWidth;
+        const randomY = Math.random() * window.innerHeight;
+        ball.style.top = randomY + 'px';
+        ball.style.left = randomX + 'px';
         container.appendChild(ball);
 
         ball.addEventListener('mouseover', function (event) {
