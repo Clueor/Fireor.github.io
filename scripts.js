@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const container = document.body;
 
-    for (let i = 0; i < 10; i++) {
-        createBall();
-    }
+    setInterval(createBall, 1000); // Create a new ball every second
 
     function createBall() {
         const ball = document.createElement('div');
@@ -12,11 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         ball.style.left = Math.random() * window.innerWidth + 'px';
         container.appendChild(ball);
 
-        const beam = document.createElement('div');
-        beam.classList.add('beam');
-        container.appendChild(beam);
-
-        document.addEventListener('mousemove', function (event) {
+        ball.addEventListener('mousemove', function (event) {
             const mouseX = event.clientX;
             const mouseY = event.clientY;
 
@@ -29,13 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < 100) {
-                beam.style.left = ballX + 'px';
-                beam.style.top = ballY + 'px';
-                beam.style.transform = `rotate(${Math.atan2(dy, dx)}rad)`;
-                beam.style.height = distance + 'px';
-                beam.style.opacity = 1;
+                ball.style.backgroundColor = '#ff0000';
             } else {
-                beam.style.opacity = 0;
+                ball.style.backgroundColor = '#fff';
             }
         });
     }
