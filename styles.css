@@ -1,1 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+}
+
+header {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+}
+
+.discord-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+.discord-button a {
+    display: inline-block;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.discord-button a:hover {
+    transform: scale(1.1);
+}
+
+.cursor {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999;
+    animation: moveCursor 5s infinite alternate;
+}
+
+.rounded {
+    animation-name: moveCursorRounded;
+}
+
+.pointed {
+    animation-name: moveCursorPointed;
+}
+
+@keyframes moveCursor {
+    from {
+        top: 0;
+        left: 0;
+    }
+    to {
+        top: calc(100vh - 15px);
+        left: calc(100vw - 15px);
+    }
+}
+
+@keyframes moveCursorRounded {
+    from {
+        border-radius: 0;
+    }
+    to {
+        border-radius: 50%;
+    }
+}
+
+@keyframes moveCursorPointed {
+    from {
+        border-radius: 50%;
+    }
+    to {
+        border-radius: 0;
+    }
+}
 
