@@ -4,17 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fireor</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            overflow: hidden;
+        }
+        header {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        .discord-button {
+            background-color: #ff0000;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .discord-button:hover {
+            transform: scale(1.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .ball {
+            position: absolute;
+            background-color: #fff;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: moveBalls 10s linear infinite alternate;
+        }
+        @keyframes moveBalls {
+            from {
+                top: -10px;
+                left: -10px;
+            }
+            to {
+                top: calc(100vh + 10px);
+                left: calc(100vw + 10px);
+            }
+        }
+        .beam {
+            position: absolute;
+            background-color: #ff0000;
+            width: 2px;
+            height: 100px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Fireor</h1>
+        <a href="https://discord.gg/fkeXQwYGYS" class="discord-button">Discord</a>
     </header>
-    <div class="discord-button">
-        <a href="https://discord.gg/fkeXQwYGYS" target="_blank">Discord</a>
+    <div class="container">
+        <h1>Welcome to Fireor</h1>
+        <p>This is a simple and cool website with a black background and a red Discord button.</p>
+        <p>Add your cool content here!</p>
     </div>
-    <div class="cursor rounded"></div>
-    <div class="cursor pointed"></div>
-    <script src="scripts.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const container = document.querySelector('.container');
+
+            for (let i = 0; i < 10; i++) {
+                createBall();
+            }
+
+            function createBall() {
+                const ball = document.createElement('div');
+                ball.classList.add('ball');
+                ball.style.top = Math.random() * window.innerHeight + 'px';
+                ball.style.left = Math.random() * window.innerWidth + 'px';
+                container.appendChild(ball);
+
+                const beam = document.createElement('div');
+                beam.classList.add('beam');
+                container.appendChild(beam);
+
+                ball.addEventListener('mousemove', function (event) {
+                    const mouseX = event.clientX;
+                    const mouseY = event.clientY;
+
+                    const ballRect = ball.getBoundingClientRect();
+                    const ballX = ballRect.left + ballRect.width / 2;
+                    const ballY = ballRect.top + ballRect.height / 2;
+
+                    const dx = mouseX - ballX;
+                    const dy = mouseY - ballY;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 100) {
+                        beam.style.left = ballX + 'px';
+                        beam.style.top = ballY + 'px';
+                        beam.style.transform = `rotate(${Math.atan2(dy, dx)}rad)`;
+                        beam.style.height = distance + 'px';
+                        beam.style.opacity = 1;
+                    } else {
+                        beam.style.opacity = 0;
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
