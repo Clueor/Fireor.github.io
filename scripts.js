@@ -1,23 +1,10 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const container = document.getElementById('container');
+document.addEventListener('DOMContentLoaded', function() {
+    const h1 = document.querySelector('h1');
 
-    setInterval(createBall, 1000); // Create a new ball every second
+    document.addEventListener('mousemove', function(e) {
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
 
-    function createBall() {
-        const ball = document.createElement('div');
-        ball.classList.add('ball');
-        const randomX = Math.random() * window.innerWidth;
-        const randomY = Math.random() * window.innerHeight;
-        ball.style.top = randomY + 'px';
-        ball.style.left = randomX + 'px';
-        container.appendChild(ball);
-
-        ball.addEventListener('mouseover', function (event) {
-            ball.style.backgroundColor = '#ff0000';
-        });
-
-        ball.addEventListener('mouseout', function (event) {
-            ball.style.backgroundColor = '#fff';
-        });
-    }
+        h1.style.transform = `translate(${x *  100 -  50}px, ${y *  100 -  50}px)`;
+    });
 });
