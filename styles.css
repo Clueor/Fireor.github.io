@@ -1,4 +1,4 @@
-/* styles.css */
+/* General Styling */
 body {
     background-color: black;
     color: white;
@@ -25,6 +25,7 @@ h1 {
     animation: fadeIn  2s ease-in-out;
 }
 
+/* Discord Button */
 .discord-button {
     position: absolute;
     top:  10px;
@@ -45,6 +46,7 @@ h1 {
     transform: scale(1.1);
 }
 
+/* Animations */
 @keyframes fadeIn {
     from { opacity:  0; }
     to { opacity:  1; }
