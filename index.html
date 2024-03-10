@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Vote links</title>
-    <script>
-        window.onload = function() {
-            window.open('https://vote.pika-network.net/1', '_blank');
-            window.open('https://vote.pika-network.net/2', '_blank');
-            window.open('https://vote.pika-network.net/3', '_blank');
-            window.open('https://vote.pika-network.net/4', '_blank');
-            window.open('https://vote.pika-network.net/5', '_blank');
-            window.open('https://vote.pika-network.net/6', '_blank');
-            window.open('https://vote.pika-network.net/7', '_blank');
-        };
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vote links</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    >Opening all vote links for pika. pls wait.
+  <div class="container">
+    <h1>Are you sure you want to open all the links?</h1>
+    <div class="buttons">
+      <button id="yesBtn" onclick="windowOpen()">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
